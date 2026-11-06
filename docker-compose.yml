@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      UNISPACE_MODEL: ${UNISPACE_MODEL:-claude-sonnet-5-5}
+    volumes:
+      - unispace-data:/data
+
+volumes:
+  unispace-data:
